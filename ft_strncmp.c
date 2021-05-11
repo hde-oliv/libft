@@ -14,7 +14,7 @@ int	ft_strncmp(char *s1, char *s2, unsigned int n)
 {
 	unsigned	int counter;
 
-	counter = 0;
+	counter	= 0;
 	while ((s1[counter] == s2[counter]) && (s1[counter] != '\0') &&\
 	(s2[counter] != '\0'))
 		counter++;

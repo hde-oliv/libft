@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-
 int	ft_isspace(char c)
 {
 	if (c == ' ' || c == '\f' || c == '\n' || c == '\r' || c == '\t' || c == '\v')
@@ -51,20 +47,4 @@ int	ft_atoi(const char *nptr)
 			return (minus * res);
 	}
 	return (minus * res);
-}
-
-int main(void)
-{
-	char num[5];
-	int res;
-
-	strcpy(num, "++45");
-
-	res = ft_atoi(num);
-	printf("My: %d\n", res);
-
-	res = atoi(num);
-	printf("Original: %d\n", res);
-
-	return (0);
 }

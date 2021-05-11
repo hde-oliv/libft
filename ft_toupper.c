@@ -10,15 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strupcase(char *str)
+int ft_toupper(int c)
 {
-	int counter;
-
-	counter = -1;
-	while (str[++counter] != '\0')
-	{
-		if (str[counter] >= 97 && str[counter] <= 122)
-			str[counter] = (str[counter] - 32);
-	}
-	return (str);
+	if (c >= 97 && c <= 122)
+		c = (c - 32);
+	return (c);
 }
