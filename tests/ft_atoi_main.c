@@ -20,7 +20,7 @@ int main(void)
 	else
 		printf("1) KO! Expected %d, got %d!\n", res_o, res);
 
-	strcpy(num, "             +50");
+	strcpy(num, "           +50");
 
 	res = ft_atoi(num);
 	res_o = atoi(num);
@@ -119,4 +119,96 @@ int main(void)
 		printf("10) OK!\n");
 	else
 		printf("10) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "-5894asdf9358");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("11) OK!\n");
+	else
+		printf("11) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "+4-4+60");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("12) OK!\n");
+	else
+		printf("12) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "-2147483647");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("13) OK!\n");
+	else
+		printf("13) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "2147483647");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("14) OK!\n");
+	else
+		printf("14) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "+3-648");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("15) OK!\n");
+	else
+		printf("15) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "asdf-2483648");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("16) OK!\n");
+	else
+		printf("16) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "-2147483648");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("17) OK!\n");
+	else
+		printf("17) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "al-+2al147483648");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("18) OK!\n");
+	else
+		printf("18) KO! Expected %d, got %d!\n", res_o, res);
+
+	strcpy(num, "2147483648");
+
+	res = ft_atoi(num);
+	res_o = atoi(num);
+
+	if (res == res_o)
+		printf("19) OK!\n");
+	else
+		printf("19) KO! Expected %d, got %d!\n", res_o, res);
+
+	return (0);
 }
