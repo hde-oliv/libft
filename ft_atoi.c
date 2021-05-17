@@ -31,11 +31,8 @@ int	ft_atoi(const char *nptr)
 	{
 		while (ft_isspace(nptr[i]))
 			i++;
-		if (nptr[i] == '-')
-		{
+		if (nptr[i++] == '-')
 			minus = -1;
-			i++;
-		}
 		else if (nptr[i] == '+')
 			i++;
 		if (nptr[i] <= '9' && nptr[i] >= '0')

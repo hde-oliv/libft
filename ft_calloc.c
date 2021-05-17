@@ -1,11 +1,11 @@
 #include <stdlib.h>
 #include <limits.h>
 
-void ft_bzero(void *s, size_t n);
+void	ft_bzero(void *s, size_t n);
 
-void *ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	void *p;
+	void	*p;
 
 	if (nmemb * size > INT_MAX)
 		return (0);

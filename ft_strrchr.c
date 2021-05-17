@@ -1,12 +1,12 @@
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *i;
+	const char	*i;
 
 	i = s;
-	while(*s++)
+	while (*s++)
 		continue ;
-	while(--s != i)
+	while (--s != i)
 		if (*s == c)
-			return((char *)s);
-	return(0);
+			return ((char *)s);
+	return (0);
 }

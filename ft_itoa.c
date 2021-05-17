@@ -14,11 +14,10 @@
 
 char	*ft_itoa(int n)
 {
-	int i;
-	char *p;
+	int		i;
+	char	*p;
 
-	p = (char *) malloc(sizeof(char) * 12); /* Try not to hard code this later */
-
+	p = (char *) malloc(sizeof(char) * 12);
 	i = 12;
 	p[i] = '\0';
 	while (--i != -1)

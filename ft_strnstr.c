@@ -14,9 +14,9 @@
 
 char	*ft_strnstr(const char *big, char *little, size_t len)
 {
-	int i;
-	int j;
-	int p;
+	int	i;
+	int	j;
+	int	p;
 
 	i = -1;
 	if (!*little)

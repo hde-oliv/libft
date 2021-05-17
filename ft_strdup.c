@@ -3,10 +3,10 @@
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
 
-char *strdup(const char *s)
+char	*strdup(const char *s)
 {
-	size_t i;
-	void *p;
+	size_t	i;
+	void	*p;
 
 	i = ft_strlen(s);
 	p = malloc(i * sizeof(char));

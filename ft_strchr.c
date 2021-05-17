@@ -1,7 +1,7 @@
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while(*s++)
+	while (*s++)
 		if (*s == c)
-			return((char *)s);
-	return(0);
+			return ((char *)s);
+	return (0);
 }
