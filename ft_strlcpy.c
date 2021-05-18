@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-unsigned int	ft_strlcpy(char *dest, char *src, unsigned int size)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned int	i;
-	unsigned int	counter;
+	unsigned int i;
 
 	i = 0;
-	counter = 0;
-	while (src[counter] != '\0')
-		counter++;
 	if (size != 0)
 	{
 		while ((i < (size - 1)) && src[i] != '\0')
 		{
-			dest[i] = src[i];
+			dst[i] = src[i];
 			i++;
 		}
 	}
-	dest[i] = '\0';
-	return (counter);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }

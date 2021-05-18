@@ -7,35 +7,23 @@ int	main(void)
 {
 	int res_org;
 	int res;
+	int j;
 
-	printf("Numbers:\n\n");
-	for (char i = '0'; i <= '9'; i++)
+	for (char i = 0; i <= 126; i++)
 	{
 		res_org = isdigit(i);
 		res = ft_isdigit(i);
-		if (res_org && res)
-			printf("%c : OK!\n", i);
-		else
-			printf("%c : KO!\n", i);
+		printf("%c | org = %i ; my = %i\n", i, res_org, res);
 	}
-	printf("Other Chars: (Must return KO!)\n\n");
-	for (char i = '\0'; i <= '/'; i++)
+	j = 127;
+	res_org = isdigit(j);
+	res = ft_isdigit(j);
+	printf("DEL | org = %i ; my = %i\n", res_org, res);
+	for (char i = -128; i <= 0; i++)
 	{
 		res_org = isdigit(i);
 		res = ft_isdigit(i);
-		if (res_org && res)
-			printf("%c : OK!\n", i);
-		else
-			printf("%c : KO!\n", i);
-	}
-	for (char i = '{'; i <= '~'; i++)
-	{
-		res_org = isdigit(i);
-		res = ft_isdigit(i);
-		if (res_org && res)
-			printf("%c : OK!\n", i);
-		else
-			printf("%c : KO!\n", i);
+		printf("%c | org = %i ; my = %i\n", i, res_org, res);
 	}
 	return (0);
 }

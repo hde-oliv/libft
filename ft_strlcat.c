@@ -10,35 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+#include <stddef.h>
+
+size_t	ft_strlen(const char *s);
+
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	counter;
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	org_size;
 
-	counter = 0;
-	while (str[counter] != '\0')
-		counter++;
-	return (counter);
-}
-
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
-{
-	unsigned int	counter;
-	unsigned int	counter_2;
-	unsigned int	dest_org_size;
-
-	counter = 0;
-	counter_2 = 0;
-	dest_org_size = ft_strlen(dest);
-	while (dest[counter] != '\0')
-		counter++;
-	if (counter > size)
+	j = 0;
+	org_size = ft_strlen(dst);
+	i = org_size;
+	if (org_size >= size)
 		return (ft_strlen(src) + size);
-	while (counter < (size - 1))
+	while (i < (size - 1) && src[j])
 	{
-		dest[counter] = src[counter_2];
-		counter++;
-		counter_2++;
+		dst[i] = src[j];
+		i++;
+		j++;
 	}
-	dest[counter] = '\0';
-	return (ft_strlen(src) + dest_org_size);
+	dst[i] = '\0';
+	return (ft_strlen(src) + org_size);
 }
