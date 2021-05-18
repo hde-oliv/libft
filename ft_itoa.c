@@ -4,6 +4,9 @@ size_t	ft_intlen(int i)
 {
 	size_t	size;
 
+	size = 0;
+	if (i == 0)
+		return (1);
 	while (i != 0)
 	{
 		size++;
@@ -16,15 +19,21 @@ char	*ft_itoa(int n)
 {
 	int		i;
 	char	*p;
+	int		minus;
 
 	i = ft_intlen(n);
-	p = (char *) malloc(sizeof(char) * i);
-	while (--i != -1)
+	minus = n < 0;
+	i += minus;
+	p = (char *) malloc(sizeof(char) * i + 1);
+	p[i] = '\0';
+	if (minus)
+		p[0] = '-';
+	while (--i != (minus - 1))
 	{
-		if (n != 0)
-			p[i] = (n % 10) + 48;
+		if ((n % 10) < 0)
+			p[i] = ((n % 10) * -1) + 48;
 		else
-			return (&p[i]);
+			p[i] = (n % 10) + 48;
 		n = n / 10;
 	}
 	return (p);
