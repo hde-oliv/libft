@@ -1,6 +1,4 @@
-#include <stdlib.h>
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+#include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
@@ -8,10 +6,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (len != 0)
 	{
-		p = (char *) malloc(sizeof(char) * len);
-		ft_strlcpy(p, &s[start], len);
+		p = (char *) malloc(sizeof(char) * len + 1);
+		ft_strlcpy(p, &s[start], len + 1);
 		return (p);
 	}
 	else
-		return (0);
+		return (NULL);
 }

@@ -1,7 +1,4 @@
-#include <stdlib.h>
-
-size_t	ft_strlen(const char *s);
-size_t	ft_strlcat(char *dst, const char *src, size_t size);
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
@@ -14,10 +11,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (s1_len || s2_len)
 	{
 		p = (char *) malloc(sizeof(char) * (s1_len + s2_len) + 1);
-		ft_strlcat(p, s1, s1_len);
-		ft_strlcat(p, s2, s2_len);
+		ft_strlcpy(p, s1, s1_len + 1);
+		ft_strlcat(p, s2, s1_len + s2_len + 1);
 		return (p);
 	}
 	else
-		return (0);
+		return (NULL);
 }

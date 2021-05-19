@@ -1,4 +1,3 @@
-/* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
@@ -10,7 +9,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
+#include "libft.h"
 
 int	ft_isspace(char c)
 {
@@ -23,7 +22,7 @@ int	ft_isspace(char c)
 
 int	ft_atoi(const char *nptr)
 {
-	int	minus; 
+	int	minus;
 	int	res;
 
 	minus = -1;
