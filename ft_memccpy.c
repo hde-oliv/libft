@@ -9,8 +9,8 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 		else
 		{
 			*(unsigned char *) dest = *(unsigned char *) src;
-			break ;
+			return (dest);
 		}
 	}
-	return (dest);
+	return (NULL);
 }

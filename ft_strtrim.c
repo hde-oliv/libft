@@ -7,12 +7,26 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		s1_len;
 	int		set_len;
 
+	i = 0;
 	s1_len = ft_strlen(s1);
 	set_len = ft_strlen(set);
 	if (!ft_strncmp(s1, set, set_len))
 		i++;
-	if (!ft_strnstr(&s1[set_len], (char *)set, s1_len - set_len))
+	if (!ft_strncmp(&s1[s1_len - set_len], set, set_len))
 		i++;
-	p = (char *) malloc(sizeof(char) * (s1_len - (i * set_len)) + 1);
-	while (*s1++)
+	if (i != 0)
+	{
+		p = (char *) malloc(sizeof(char) * (s1_len - (i * set_len)) + 1);
+		if (i == 2)
+			ft_strlcpy(p, &s1[set_len], s1_len + 1 - (set_len * 2));
+		else
+		{
+			if (*s1 == *set)
+				ft_strlcpy(p, &s1[set_len], s1_len + 1 - set_len);
+			else
+				ft_strlcpy(p, s1, s1_len + 1 - set_len);
+		}
+		return (p);
+	}
+	return (NULL);
 }
