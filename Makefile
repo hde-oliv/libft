@@ -34,7 +34,7 @@ CC		=	clang
 
 LIB		=	ar rc
 
-CFLAGS	=	-Wall -Wextra -Werror -fsanitize=address
+CFLAGS	=	-Wall -Wextra -Werror
 
 RM		=	rm -f
 
@@ -55,5 +55,7 @@ fclean: 	clean
 
 re: 		fclean all
 
+test:		all
+			${CC} ${CFLAGS} -lbsd -fsanitize=address test/tests.c -L. -lft -o tests
 
 .PHONY: 	all clean fclean re
