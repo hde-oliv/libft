@@ -21,23 +21,23 @@ static int	ft_isspace(char c)
 		return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
 	int	minus;
 	int	res;
 
 	minus = -1;
 	res = 0;
-	while (ft_isspace(*nptr))
-		nptr++;
-	if (*nptr == '-')
+	while (ft_isspace(*str))
+		str++;
+	if (*str == '-')
 	{
 		minus = 1;
-		nptr++;
+		str++;
 	}
-	else if (*nptr == '+')
-		nptr++;
-	while (ft_isdigit(*nptr))
-		res = (res * 10) - (*nptr++ - '0');
+	else if (*str == '+')
+		str++;
+	while (ft_isdigit(*str))
+		res = (res * 10) - (*str++ - '0');
 	return (minus * res);
 }
