@@ -14,7 +14,7 @@
 
 static char const	*ft_rf_strchr(char const *s1, char const *set)
 {
-	char const *s;
+	char const	*s;
 
 	s = set;
 	while (*set)
@@ -28,7 +28,7 @@ static char const	*ft_rf_strchr(char const *s1, char const *set)
 
 static char const	*ft_rb_strchr(char const *s1, char const *set)
 {
-	char const *s;
+	char const	*s;
 
 	s = set;
 	while (*set)
@@ -39,7 +39,6 @@ static char const	*ft_rb_strchr(char const *s1, char const *set)
 	}
 	return (s1);
 }
-
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -55,6 +54,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (NULL);
 	i = e - s + 2;
 	p = (char *) malloc(sizeof(char) * i);
+	if (p == NULL)
+		return (NULL);
 	ft_strlcpy(p, s, i);
 	return (p);
 }

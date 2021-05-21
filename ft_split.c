@@ -12,16 +12,45 @@
 
 #include "libft.h"
 
+static size_t	ft_chrcount(char const *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s++)
+		if (*s == c)
+			i += 1;
+	return (i);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	*p;
+	char	*t;
 	char	**a;
 	size_t	i;
-	size_t	s_size;
 
-	s_size = ft_strlen(s);
-	while (i < s_size)
+	i = ft_chrcount(s, c);
+	a = (char **) malloc(sizeof(char) * (i + 2));
+	if (a == NULL)
+		return (NULL);
+	t = (char *) s;
+	i = 0;
+	while (*t)
 	{
-
+		p = ft_strchr(++t, c);
+		t = (char *) p;
+		p = (char *) malloc(sizeof(char) * (t - p) + 2);
+		if (p == NULL)
+		{
+			while (i-- != 0)
+				free(a[i]);
+			free(a);
+			return (NULL);
+		}
+		ft_strlcpy(p, t, t - p + 2);
+		a[i++] = p;
 	}
+	a[i] = "\0";
+	return (a);
 }
