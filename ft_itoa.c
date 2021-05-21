@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-size_t	ft_intlen(int i)
+static size_t	ft_intlen(int i)
 {
 	size_t	size;
 

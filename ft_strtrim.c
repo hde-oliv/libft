@@ -12,33 +12,49 @@
 
 #include "libft.h"
 
+static char const	*ft_rf_strchr(char const *s1, char const *set)
+{
+	char const *s;
+
+	s = set;
+	while (*set)
+	{
+		if (*(unsigned char *)s1 == *(unsigned char *)set)
+			return (ft_rf_strchr(++s1, s));
+		set++;
+	}
+	return (s1);
+}
+
+static char const	*ft_rb_strchr(char const *s1, char const *set)
+{
+	char const *s;
+
+	s = set;
+	while (*set)
+	{
+		if (*(unsigned char *)s1 == *(unsigned char *)set)
+			return (ft_rb_strchr(--s1, s));
+		set++;
+	}
+	return (s1);
+}
+
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*p;
-	int		i;
-	int		s1_len;
-	int		set_len;
+	char const	*s;
+	char const	*e;
+	char		*p;
+	size_t		i;
 
-	i = 0;
-	s1_len = ft_strlen(s1);
-	set_len = ft_strlen(set);
-	if (!ft_strncmp(s1, set, set_len))
-		i++;
-	if (!ft_strncmp(&s1[s1_len - set_len], set, set_len))
-		i++;
-	if (i != 0)
-	{
-		p = (char *) malloc(sizeof(char) * (s1_len - (i * set_len)) + 1);
-		if (i == 2)
-			ft_strlcpy(p, &s1[set_len], s1_len + 1 - (set_len * 2));
-		else
-		{
-			if (*s1 == *set)
-				ft_strlcpy(p, &s1[set_len], s1_len + 1 - set_len);
-			else
-				ft_strlcpy(p, s1, s1_len + 1 - set_len);
-		}
-		return (p);
-	}
-	return (NULL);
+	i = ft_strlen(s1);
+	s = ft_rf_strchr(s1, set);
+	e = ft_rb_strchr(&s1[i - 1], set);
+	if (s == s1 && e == &s1[i - 1])
+		return (NULL);
+	i = e - s + 2;
+	p = (char *) malloc(sizeof(char) * i);
+	ft_strlcpy(p, s, i);
+	return (p);
 }

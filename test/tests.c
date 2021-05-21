@@ -23,13 +23,14 @@ int main(void)
 	int org;
 	int yrs;
 	char *p_org;
-	char	*q;
+	char *q;
 	char c;
 	char c_o;
 	char str1[90];
 	char str2[90];
 	char *d;
 	int j;
+	char set[90];
 
 	/* libc */
 	/* ft_memset */
@@ -734,6 +735,37 @@ int main(void)
 	free(p);
 	/* end ft_strjoin */
 	/* ft_strtrim */
+	printf("\n\n-----------FT_STRTRIM----------\n");
+	printf("\nHenrique: ");
+	strcpy(str, "abcbcabcabcaababacHenriqueabcbabbabbacabaa");
+	strcpy(set, "abc");
+	p = ft_strtrim(str, set);
+	printf("%s\n", p);
+	free(p);
+	printf("\nHenriqueabcv: ");
+	strcpy(str, "abcbcabcabcaababacHenriqueabcvbabbabbacabaa");
+	strcpy(set, "abc");
+	p = ft_strtrim(str, set);
+	printf("%s\n", p);
+	free(p);
+	printf("\nvbacHenrique: ");
+	strcpy(str, "abcbcabcabcaabavbacHenriqueabcbabbabbacabaa");
+	strcpy(set, "abc");
+	p = ft_strtrim(str, set);
+	printf("%s\n", p);
+	free(p);
+	printf("\n(null): ");
+	strcpy(str, "");
+	strcpy(set, "abc");
+	p = ft_strtrim(str, set);
+	printf("%s\n", p);
+	free(p);
+	printf("\n(null): ");
+	strcpy(str, "abcbcabcabcaababacHenriqueabcbabbabbacabaa");
+	strcpy(set, "");
+	p = ft_strtrim(str, set);
+	printf("%s\n", p);
+	free(p);
 	/* end ft_strtrim */
 	/* ft_split */
 	/* end ft_split */
