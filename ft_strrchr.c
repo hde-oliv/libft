@@ -16,11 +16,11 @@ char	*ft_strrchr(const char *s, int c)
 {
 	const char	*i;
 
-	i = s;
+	i = s - 1;
 	while (*s++)
 		continue ;
 	if ((char) c == '\0')
-		return ((char *) s);
+		return ((char *) --s);
 	while (--s != i)
 		if (*s == c)
 			return ((char *)s);

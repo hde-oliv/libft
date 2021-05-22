@@ -32,7 +32,7 @@ static char const	*ft_rb_strchr(char const *s, char const *s1, char const *set)
 
 	set_s = set;
 	if (s == s1)
-		return (s1++);
+		return (s);
 	while (*set)
 	{
 		if (*(unsigned char *)s1 == *(unsigned char *)set)
@@ -56,6 +56,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	e = ft_rb_strchr(s1, &s1[i - 1], set);
 	if (s == s1 && e == &s1[i - 1])
 		return(ft_strdup(s1));
+	if (e == s1)
+		e = &s1[i - 1];
 	i = e - s + 2;
 	p = (char *) malloc(sizeof(char) * i);
 	if (p == NULL)

@@ -31,7 +31,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 
 	i = ft_chrcnt(s, c);
-	a = (char **) malloc(sizeof(char) * (i + 2));
+	a = (char **) malloc(sizeof(p) * (i + 2));
 	if (a == NULL)
 		return (NULL);
 	t = (char *) s;

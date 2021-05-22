@@ -14,6 +14,7 @@ int main(void)
 	char num[90];
 	char *p;
 	char *p_2;
+	char **a;
 	char c;
 	char c_o;
 	int res;
@@ -1668,6 +1669,9 @@ int main(void)
 	/* end ft_strtrim */
 
 	/* ft_split */
+	strcpy(str, "ababababababababa");
+	a = ft_split(str, 'b');
+	printf("%s", *&a[0]);
 	/* end ft_split */
 
 	/* ft_itoa */

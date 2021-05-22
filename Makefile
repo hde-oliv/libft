@@ -33,36 +33,40 @@ SRCS	=	ft_memset.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
 
-OBJS	=	${SRCS:.c=.o}
+OBJS	=	$(SRCS:.c=.o)
 
 NAME	=	libft.a
 
-CC		=	clang
+CC		=	gcc
 
 LIB		=	ar rcs
 
-CFLAGS	=	-Wall -Wextra -Werror -I. -fsanitize=address -g
+CFLAGS	=	-Wall -Wextra -Werror -I. -c
 
 RM		=	rm -f
 
 .c.o:
-			${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+			$(CC) $(CFLAGS) $< -o $(<:.c=.o)
 
 
-${NAME}:	${OBJS}
-			${LIB} ${NAME} ${OBJS}
+$(NAME):	$(OBJS)
+			$(LIB) $(NAME) $(OBJS)
 
-all:		${NAME}
+all:		$(NAME)
 
 clean:
-			${RM} ${OBJS}
+			$(RM) $(OBJS)
 
 fclean: 	clean
-			${RM} ${NAME}
+			$(RM) $(NAME)
 
 re: 		fclean all
 
+so:
+			$(CC) -fPIC $(CFLAGS) $(SRCS)
+			gcc -shared -o libft.so $(OBJS)
+
 test:		all
-			${CC} ${CFLAGS} -lbsd -fsanitize=address -g test/tests.c -L. -lft -o tests
+			$(CC) $(CFLAGS) -lbsd -fsanitize=address -g test/tests.c -L. -lft -o tests
 
 .PHONY: 	all clean fclean re
