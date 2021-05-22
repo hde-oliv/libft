@@ -26,15 +26,17 @@ static char const	*ft_rf_strchr(char const *s1, char const *set)
 	return (s1);
 }
 
-static char const	*ft_rb_strchr(char const *s1, char const *set)
+static char const	*ft_rb_strchr(char const *s, char const *s1, char const *set)
 {
-	char const	*s;
+	char const	*set_s;
 
-	s = set;
+	set_s = set;
+	if (s == s1)
+		return (s1++);
 	while (*set)
 	{
 		if (*(unsigned char *)s1 == *(unsigned char *)set)
-			return (ft_rb_strchr(--s1, s));
+			return (ft_rb_strchr(s, --s1, set_s));
 		set++;
 	}
 	return (s1);
@@ -48,10 +50,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t		i;
 
 	i = ft_strlen(s1);
+	if (!i)
+		return (ft_strdup(s1));
 	s = ft_rf_strchr(s1, set);
-	e = ft_rb_strchr(&s1[i - 1], set);
+	e = ft_rb_strchr(s1, &s1[i - 1], set);
 	if (s == s1 && e == &s1[i - 1])
-		return (NULL);
+		return(ft_strdup(s1));
 	i = e - s + 2;
 	p = (char *) malloc(sizeof(char) * i);
 	if (p == NULL)

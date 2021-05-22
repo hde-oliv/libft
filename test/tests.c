@@ -1117,6 +1117,14 @@ int main(void)
 		printf("19) OK!\n");
 	else
 		printf("19) KO! Expected %d, got %d!\n", res_org, res);
+
+	strcpy(num, "");
+	res = ft_atoi(num);
+	res_org = atoi(num);
+	if (res == res_org)
+		printf("20) OK!\n");
+	else
+		printf("20) KO! Expected %d, got %d!\n", res_org, res);
 	/* end ft_atoi */
 
 	/* ft_isalpha */
@@ -1437,9 +1445,18 @@ int main(void)
 	v = calloc(10, 1);
 	w = ft_calloc(10, 1);
 	if (!memcmp(v, w, 10))
-		printf("Test 1 - OK!\n");
+		printf("Test 01 - OK!\n");
 	else
-		printf("Test 1 - KO!\n");
+		printf("Test 01 - KO!\n");
+	free(v);
+	free(w);
+
+	v = calloc(0, 1);
+	w = ft_calloc(0, 1);
+	if (w == v)
+		printf("Test 02 - OK!\n");
+	else
+		printf("Test 02 - KO!\n");
 	free(v);
 	free(w);
 	/* end ft_calloc */
@@ -1448,11 +1465,28 @@ int main(void)
 	printf("\n\n-----------FT_STRDUP----------\n");
 	strcpy(str, "SHIN");
 	p = ft_strdup(str);
-	if (!strcmp(str,p))
-		printf("Test 1 - OK!\n");
+	if (!strcmp(str, p))
+		printf("Test 01 - OK!\n");
 	else
-		printf("Test 1 - KO!\n");
+		printf("Test 01 - KO!\n");
 	free(p);
+
+	strcpy(str, "");
+	p = ft_strdup(str);
+	if (!strcmp(str, p))
+		printf("Test 02 - OK!\n");
+	else
+		printf("Test 02 - KO!\n");
+	free(p);
+
+	bzero(str, sizeof(str));
+	p = ft_strdup(str);
+	if (!strcmp(str, p))
+		printf("Test 03 - OK!\n");
+	else
+		printf("Test 03 - KO!\n");
+	free(p);
+	
 	/* end ft_strdup */
 
 	/* end libc*/
@@ -1463,9 +1497,57 @@ int main(void)
 	strcpy(str, "Watermelon isn't that bad, ok!");
 	p = ft_substr(str, 0, 10);
 	if (!strcmp(p, "Watermelon"))
-		printf("Test 1 - OK!\n");
+		printf("Test 01 - OK!\n");
 	else
-		printf("Test 1 - KO!\n");
+		printf("Test 01 - KO!\n");
+	free(p);
+
+	strcpy(str, "Watermelon isn't that bad, ok!");
+	p = ft_substr(str, 0, 0);
+	if (p == NULL)
+		printf("Test 02 - OK!\n");
+	else
+		printf("Test 02 - KO!\n");
+	free(p);
+
+	strcpy(str, "Watermelon isn't that bad, ok!");
+	p = ft_substr(str, 80, 90);
+	if (p == NULL)
+		printf("Test 03 - OK!\n");
+	else
+		printf("Test 03 - KO!\n");
+	free(p);
+
+	strcpy(str, "ABC");
+	p = ft_substr(str, 0, 4);
+	if (p == NULL)
+		printf("Test 04 - OK!\n");
+	else
+		printf("Test 04 - KO!\n");
+	free(p);
+
+	strcpy(str, "ABC");
+	p = ft_substr(str, 1, 2);
+	if (!strcmp(p, "BC"))
+		printf("Test 05 - OK!\n");
+	else
+		printf("Test 05 - KO!\n");
+	free(p);
+
+	strcpy(str, "ABC");
+	p = ft_substr(str, 2, 1);
+	if (!strcmp(p, "C"))
+		printf("Test 06 - OK!\n");
+	else
+		printf("Test 06 - KO!\n");
+	free(p);
+
+	strcpy(str, "ABC");
+	p = ft_substr(str, 2, 2);
+	if (!strcmp(p, "C"))
+		printf("Test 07 - OK!\n");
+	else
+		printf("Test 07 - KO!\n");
 	free(p);
 	/* end ft_substr */
 
@@ -1475,10 +1557,38 @@ int main(void)
 	strcpy(str_2, "Megami");
 	p = ft_strjoin(str, str_2);
 	if (!strcmp(p, "Shin Megami"))
-		printf("Test 1 - OK!\n");
+		printf("Test 01 - OK!\n");
 	else
-		printf("Test 1 - KO!\n");
+		printf("Test 01 - KO!\n");
 	free(p);
+
+	strcpy(str, "Shin ");
+	strcpy(str_2, "");
+	p = ft_strjoin(str, str_2);
+	if (!strcmp(p, "Shin "))
+		printf("Test 02 - OK!\n");
+	else
+		printf("Test 02 - KO!\n");
+	free(p);
+	
+	strcpy(str, "");
+	strcpy(str_2, "");
+	p = ft_strjoin(str, str_2);
+	if (p == NULL)
+		printf("Test 03 - OK!\n");
+	else
+		printf("Test 03 - KO!\n");
+	free(p);
+
+	strcpy(str, "");
+	strcpy(str_2, " Megami");
+	p = ft_strjoin(str, str_2);
+	if (!strcmp(p, " Megami"))
+		printf("Test 04 - OK!\n");
+	else
+		printf("Test 04 - KO!\n");
+	free(p);
+	
 	/* end ft_strjoin */
 
 	/* ft_strtrim */
@@ -1488,46 +1598,73 @@ int main(void)
 
 	p = ft_strtrim(str, str_2);
 	if (!strcmp(p, "Henrique"))
-		printf("Test 1 - OK!\n");
+		printf("Test 01 - OK!\n");
 	else
-		printf("Test 1 - KO!\n");
+		printf("Test 01 - KO!\n");
 	free(p);
 
 	strcpy(str, "abcbcabcabcaababacHenriqueabcvbabbabbacabaa");
 	p = ft_strtrim(str, str_2);
 	if (!strcmp(p, "Henriqueabcv"))
-		printf("Test 2 - OK!\n");
+		printf("Test 02 - OK!\n");
 	else
-		printf("Test 2 - KO!\n");
+		printf("Test 02 - KO!\n");
 	free(p);
 
 	strcpy(str, "abcbcabcabcaabavbacHenriqueabcbabbabbacabaa");
 	strcpy(str_2, "abc");
 	p = ft_strtrim(str, str_2);
 	if (!strcmp(p, "vbacHenrique"))
-		printf("Test 3 - OK!\n");
+		printf("Test 03 - OK!\n");
 	else
-		printf("Test 3 - KO!\n");
+		printf("Test 03 - KO!\n");
 	free(p);
 
 	strcpy(str, "");
 	strcpy(str_2, "abc");
 	p = ft_strtrim(str, str_2);
 	if (!strcmp(p, ""))
-		printf("Test 4 - OK!\n");
+		printf("Test 04 - OK!\n");
 	else
-		printf("Test 4 - KO!\n");
+		printf("Test 04 - KO!\n");
 	free(p);
 
 	strcpy(str, "abcbcabcabcaababacHenriqueabcbabbabbacabaa");
 	strcpy(str_2, "");
 	p = ft_strtrim(str, str_2);
-	if (!strcmp(p, ""))
-		printf("Test 5 - OK!\n");
+	if (!strcmp(p, "abcbcabcabcaababacHenriqueabcbabbabbacabaa"))
+		printf("Test 05 - OK!\n");
 	else
-		printf("Test 5 - KO!\n");
+		printf("Test 05 - KO!\n");
 	free(p);
 
+	strcpy(str, "aa");
+	strcpy(str_2, "abc");
+	p = ft_strtrim(str, str_2);
+	if (!strcmp(p, ""))
+		printf("Test 06 - OK!\n");
+	else
+		printf("Test 06 - KO!\n");
+	free(p);
+
+	strcpy(str, "aHa");
+	strcpy(str_2, "abc");
+	p = ft_strtrim(str, str_2);
+	if (!strcmp(p, "H"))
+		printf("Test 07 - OK!\n");
+	else
+		printf("Test 07 - KO!\n");
+	free(p);
+
+
+	strcpy(str, "aa");
+	strcpy(str_2, "def");
+	p = ft_strtrim(str, str_2);
+	if (!strcmp(p, "aa"))
+		printf("Test 08 - OK!\n");
+	else
+		printf("Test 08 - KO!\n");
+	free(p);
 	/* end ft_strtrim */
 
 	/* ft_split */

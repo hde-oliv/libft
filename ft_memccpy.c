@@ -21,7 +21,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		else
 		{
 			*(unsigned char *) dst = *(unsigned char *) src;
-			return (dst);
+			return (++dst);
 		}
 	}
 	return (NULL);
