@@ -29,9 +29,9 @@ static size_t	ft_intlen(int i)
 
 char	*ft_itoa(int n)
 {
-	int		i;
-	char	*p;
-	int		minus;
+	size_t		i;
+	size_t		minus;
+	char		*p;
 
 	i = ft_intlen(n);
 	minus = n < 0;

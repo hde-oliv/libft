@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	org_size;
+	size_t	i;
+	size_t	j;
+	size_t	org_size;
 
 	j = 0;
 	org_size = ft_strlen(dst);

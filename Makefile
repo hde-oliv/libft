@@ -39,9 +39,9 @@ NAME	=	libft.a
 
 CC		=	clang
 
-LIB		=	ar rc
+LIB		=	ar rcs
 
-CFLAGS	=	-Wall -Wextra -Werror
+CFLAGS	=	-Wall -Wextra -Werror -I. -fsanitize=address
 
 RM		=	rm -f
 

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	ft_chrcount(char const *s, char c)
+static size_t	ft_chrcnt(char const *s, char c)
 {
 	size_t	i;
 
@@ -30,7 +30,7 @@ char	**ft_split(char const *s, char c)
 	char	**a;
 	size_t	i;
 
-	i = ft_chrcount(s, c);
+	i = ft_chrcnt(s, c);
 	a = (char **) malloc(sizeof(char) * (i + 2));
 	if (a == NULL)
 		return (NULL);
