@@ -25,22 +25,27 @@ static size_t	ft_chrcnt(char const *s, char c)
 
 char	**ft_split(char const *s, char c)
 {
-	char	*p;
-	char	*t;
 	char	**a;
+	char	*p;
+	char	*start;
+	char	*end;
 	size_t	i;
-
+	
 	i = ft_chrcnt(s, c);
 	a = (char **) malloc(sizeof(p) * (i + 2));
 	if (a == NULL)
 		return (NULL);
-	t = (char *) s;
+	end = (char *) s;
 	i = 0;
-	while (*t)
+	while (i != ft_chrcnt(s, c) + 1)
 	{
-		p = ft_strchr(++t, c);
-		t = (char *) p;
-		p = (char *) malloc(sizeof(char) * (t - p) + 2);
+		start = (char *)end;
+		end = ft_strchr(start, c);
+		if (end != NULL)
+			end += 1;
+		else
+			end = ft_strchr(start, '\0') + 1;
+		p = (char *) malloc(sizeof(char) * (end - start));
 		if (p == NULL)
 		{
 			while (i-- != 0)
@@ -48,9 +53,9 @@ char	**ft_split(char const *s, char c)
 			free(a);
 			return (NULL);
 		}
-		ft_strlcpy(p, t, t - p + 2);
+		ft_strlcpy(p, start, end - start);
 		a[i++] = p;
 	}
-	a[i] = "\0";
+	a[i] = "";
 	return (a);
 }

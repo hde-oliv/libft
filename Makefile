@@ -37,16 +37,16 @@ OBJS	=	$(SRCS:.c=.o)
 
 NAME	=	libft.a
 
-CC		=	gcc
+CC		=	clang
 
 LIB		=	ar rcs
 
-CFLAGS	=	-Wall -Wextra -Werror -I. -c
+CFLAGS	=	-Wall -Wextra -Werror -I. -g
 
 RM		=	rm -f
 
 .c.o:
-			$(CC) $(CFLAGS) $< -o $(<:.c=.o)
+			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 
 $(NAME):	$(OBJS)
@@ -67,6 +67,6 @@ so:
 			gcc -shared -o libft.so $(OBJS)
 
 test:		all
-			$(CC) $(CFLAGS) -lbsd -fsanitize=address -g test/tests.c -L. -lft -o tests
+			$(CC) $(CFLAGS) -lbsd -g test/tests.c -L. -lft -o tests
 
 .PHONY: 	all clean fclean re
