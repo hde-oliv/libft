@@ -6,7 +6,7 @@
 /*   By: hde-oliv <hde-oliv@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/20 17:05:40 by hde-oliv          #+#    #+#             */
-/*   Updated: 2021/05/20 17:07:00 by hde-oliv         ###   ########.fr       */
+/*   Updated: 2021/05/24 21:24:06 by hde-oliv         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,6 @@ char	**ft_split(char const *s, char c)
 		ft_strlcpy(p, start, end - start);
 		a[i++] = p;
 	}
-	a[i] = "";
+	a[i] = 0;
 	return (a);
 }
