@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char const	*ft_rf_strchr(char const *s1, char const *set)
+static char const	*ft_strchk(char const *s1, char const *set)
 {
 	char const	*s;
 
@@ -20,13 +20,13 @@ static char const	*ft_rf_strchr(char const *s1, char const *set)
 	while (*set)
 	{
 		if (*(unsigned char *)s1 == *(unsigned char *)set)
-			return (ft_rf_strchr(++s1, s));
+			return (ft_strchk(++s1, s));
 		set++;
 	}
 	return (s1);
 }
 
-static char const	*ft_rb_strchr(char const *s, char const *s1, char const *set)
+static char const	*ft_strchkb(char const *s, char const *s1, char const *set)
 {
 	char const	*set_s;
 
@@ -36,7 +36,7 @@ static char const	*ft_rb_strchr(char const *s, char const *s1, char const *set)
 	while (*set)
 	{
 		if (*(unsigned char *)s1 == *(unsigned char *)set)
-			return (ft_rb_strchr(s, --s1, set_s));
+			return (ft_strchkb(s, --s1, set_s));
 		set++;
 	}
 	return (s1);
@@ -52,10 +52,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	i = ft_strlen(s1);
 	if (!i)
 		return (ft_strdup(s1));
-	s = ft_rf_strchr(s1, set);
-	e = ft_rb_strchr(s1, &s1[i - 1], set);
+	s = ft_strchk(s1, set);
+	e = ft_strchkb(s1, &s1[i - 1], set);
 	if (s == s1 && e == &s1[i - 1])
-		return(ft_strdup(s1));
+		return (ft_strdup(s1));
 	if (e == s1)
 		e = &s1[i - 1];
 	i = e - s + 2;

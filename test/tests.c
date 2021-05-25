@@ -1737,9 +1737,9 @@ int main(void)
 	/* ft_putnbr_fd */
 	char **a;
 	a = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
-	for (size_t i = 0; i <= 12; i++)
+	for (size_t i = 0; a[i]; i++)
 	{
-		printf("%s\n");
+		printf("%s\n", a[i]);
 	}
 	/* end ft_putnbr_fd */
 	/* end additional */

@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	ft_chrcnt(char const *s, char c)
+static size_t	ft_chrcnt(const char *s, char c)
 {
 	size_t	i;
 
@@ -23,39 +23,49 @@ static size_t	ft_chrcnt(char const *s, char c)
 	return (i);
 }
 
+static char	**ft_adrr(const char *s, char c)
+{
+	char	**a;
+	char	*b;
+	size_t	i;
+	size_t	j;
+
+	i = ft_chrcnt(s, c) + 1;
+	a = (char **) malloc(sizeof(b) * i + 2);
+	b = (char *) s;
+	j = 0;
+	while (j != i)
+	{
+		a[j++] = b++;
+		b = ft_strchr(b, c) + 1;
+	}
+	a[j] = ft_strchr(s, '\0');
+	return (a);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**a;
+	char	**d;
 	char	*p;
-	char	*start;
-	char	*end;
 	size_t	i;
-	
+	size_t	j;
+
 	i = ft_chrcnt(s, c);
-	a = (char **) malloc(sizeof(p) * (i + 2));
-	if (a == NULL)
-		return (NULL);
-	end = (char *) s;
-	i = 0;
-	while (i != ft_chrcnt(s, c) + 1)
+	d = ft_adrr(s, c);
+	a = (char **) malloc(sizeof(p) * i + 2);
+	j = 0;
+	while (*d[j] != '\0')
 	{
-		start = (char *)end;
-		end = ft_strchr(start, c);
-		if (end != NULL)
-			end += 1;
+		while (d[j + 1] - d[j] == 1)
+			j++;
+		if (*d[j + 1] != '\0')
+			p = ft_substr(d[j], 0, d[j + 1] - d[j] - 1);
 		else
-			end = ft_strchr(start, '\0') + 1;
-		p = (char *) malloc(sizeof(char) * (end - start));
-		if (p == NULL)
-		{
-			while (i-- != 0)
-				free(a[i]);
-			free(a);
-			return (NULL);
-		}
-		ft_strlcpy(p, start, end - start);
-		a[i++] = p;
+			p = ft_substr(d[j], 0, d[j + 1] - d[j]);
+		a[j] = p;
 	}
-	a[i] = 0;
+	a[j] = NULL;
+	free(d);
 	return (a);
 }
