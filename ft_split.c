@@ -58,14 +58,12 @@ char	**ft_split(char const *s, char c)
 	d = ft_adrr(s, c);
 	while (*d[j] != '\0' && d[j])
 	{
-		if (d[j + 1] - d[j] != 1 && d[j] == s)
+		if (d[j + 1] - d[j] != 1)
 		{
-			p = ft_substr(d[j], 0, d[j + 1] - d[j]);
-			a[i++] = p;
-		}
-		else if (d[j + 1] - d[j] != 1 && *d[j] != '\0')
-		{
-			p = ft_substr(d[j], 1, d[j + 1] - d[j] - 1);
+			if (d[j] == s)
+				p = ft_substr(d[j], 0, d[j + 1] - d[j]);
+			else
+				p = ft_substr(d[j], 1, d[j + 1] - d[j] - 1);
 			a[i++] = p;
 		}
 		j++;
