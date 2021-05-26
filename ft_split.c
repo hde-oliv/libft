@@ -60,7 +60,7 @@ char	**ft_split(char const *s, char c)
 	{
 		if (d[j + 1] - d[j] != 1)
 		{
-			if (d[j] == s)
+			if (d[j] == s && *s != c)
 				p = ft_substr(d[j], 0, d[j + 1] - d[j]);
 			else
 				p = ft_substr(d[j], 1, d[j + 1] - d[j] - 1);

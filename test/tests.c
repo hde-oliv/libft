@@ -1743,10 +1743,88 @@ int main(void)
 	/* } */
 	/* end ft_putnbr_fd */
 	/* end additional */
-	ft_putnbr_fd(-2147483648, 1);
+	/* char *s; */
+	/* s = ft_substr("tripouille", 100, 1); // Tem que retornar 1 byte */
+	/* free(s); */
+
+	/* char *str; */
+	/* str = strdup("1"); */
+	/* s = ft_substr(str, 42, 42000000); // Tem que retornar 1 byte */
+	/* free(s); */
+	/* free(str); */
+
+	/* char **result; */
+	/* s =  "      split       this for   me  !       "; */
+	/* result = ft_split(s, ' '); */
+	/* if (!result) */
+	/* 	printf("Sucesso\n"); */
+	/* printf("Falhou\n"); */
+	/* free(result); */
+
+	/* char haystack[30] = "aaabcabcd"; */
+	/* s = ft_strnstr(haystack, "abcd", 9); */
+	/* if (s == haystack + 5) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou\n"); */
+
+	/* char *splitme; */
+	/* char *s; */
+	/* splitme = strdup(" Tripouille"); */
+	/* result = ft_split(splitme, ' '); */
+	/* if (!strcmp(result[0], "Tripouille")) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou: %s", result[0]); */
+
+	/* splitme = strdup(" Tripouille "); */
+	/* result = ft_split(splitme, ' '); */
+	/* if (!strcmp(result[0], "Tripouille")) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou: %s", result[0]); */
 
 	/* bonus */
 	/* end bonus */
+	/* ft_strlcpy(NULL, NULL, 10); // Todas as seguintes tem que dar SegFault */
+
+	/* s = ft_substr(NULL, 0, 12); */
+
+	/* char	*s1; */
+	/* char	*res; */
+	/* s1 = "where is my "; */
+	/* res = ft_strjoin(s1, NULL); */
+	/* if (res == NULL) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou\n"); */
+	/* free(s1); */
+	/* free(res); */
+
+	char	*ret;
+	ret = ft_strtrim(NULL, "asdfasdf"); // Segfault ou nulo
+	if (!ret)
+		printf("Sucesso\n");
+	else
+		printf("Falhou\n");
+	free(ret);
+
+
+	char	**expected;
+	expected = ft_split(NULL, ' '); // Segfault ou nulo
+	if (!expected)
+		printf("Sucesso\n");
+	else
+		printf("Falhou\n");
+	free(expected);
+
+
+	ft_strmapi("olol", NULL); // Segfault
+	ft_strmapi(NULL, NULL);
+
+	// Segfault ou printar algo
+	ft_putstr_fd(NULL, 1);
+	ft_putendl_fd(NULL, 1);
 
 	return (0);
 }

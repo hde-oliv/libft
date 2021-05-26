@@ -37,7 +37,7 @@ OBJS	=	$(SRCS:.c=.o)
 
 NAME	=	libft.a
 
-CC		=	clang
+CC		=	gcc
 
 LIB		=	ar rcs
 
