@@ -63,7 +63,7 @@ fclean: 	clean
 re: 		fclean all
 
 so:
-			$(CC) -fPIC $(CFLAGS) $(SRCS)
+			$(CC) -fPIC $(CFLAGS) -c $(SRCS)
 			gcc -shared -o libft.so $(OBJS)
 
 test:		all

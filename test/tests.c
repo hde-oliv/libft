@@ -352,7 +352,7 @@ int main(void)
 	/* 	printf("Test 01 - OK!\n"); */
 	/* else */
 	/* 	printf("Test 01 - KO!\n"); */
-
+/* Testar com NULL */
 	/* strcpy(str, "ELION EIECH EADIER EIECH ADONAI"); */
 	/* res = ft_strlen(str); */
 	/* res_org = strlen(str); */
@@ -1801,30 +1801,38 @@ int main(void)
 	/* free(s1); */
 	/* free(res); */
 
-	char	*ret;
-	ret = ft_strtrim(NULL, "asdfasdf"); // Segfault ou nulo
-	if (!ret)
-		printf("Sucesso\n");
-	else
-		printf("Falhou\n");
-	free(ret);
+	/* char	*ret; */
+	/* ret = ft_strtrim(NULL, "asdfasdf"); // Segfault ou nulo */
+	/* if (!ret) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou\n"); */
+	/* free(ret); */
 
 
-	char	**expected;
-	expected = ft_split(NULL, ' '); // Segfault ou nulo
-	if (!expected)
-		printf("Sucesso\n");
-	else
-		printf("Falhou\n");
-	free(expected);
+	/* char	**expected; */
+	/* expected = ft_split(NULL, ' '); // Segfault ou nulo */
+	/* if (!expected) */
+	/* 	printf("Sucesso\n"); */
+	/* else */
+	/* 	printf("Falhou\n"); */
+	/* free(expected); */
 
 
-	ft_strmapi("olol", NULL); // Segfault
-	ft_strmapi(NULL, NULL);
+	/* ft_strmapi("olol", NULL); // Segfault */
+	/* ft_strmapi(NULL, NULL); */
 
-	// Segfault ou printar algo
-	ft_putstr_fd(NULL, 1);
-	ft_putendl_fd(NULL, 1);
+	/* // Segfault ou printar algo */
+	/* ft_putstr_fd(NULL, 1); */
+	/* ft_putendl_fd(NULL, 1); */
+
+	int a;
+	char *b;
+
+	b = NULL;
+	a = strlen(b);
+	printf("%d", a);
+
 
 	return (0);
 }

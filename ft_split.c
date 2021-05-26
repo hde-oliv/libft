@@ -32,6 +32,8 @@ static char	**ft_adrr(const char *s, char c)
 
 	i = ft_chrcnt(s, c);
 	a = (char **) malloc(sizeof(b) * (i + 4));
+	if ((void **) a == (void **)0)
+		return (NULL);
 	b = (char *) s;
 	j = 0;
 	while (j != i + 1)
@@ -44,31 +46,43 @@ static char	**ft_adrr(const char *s, char c)
 	return (a);
 }
 
+static char	**ft_freeall(char **array, size_t index)
+{
+	while (index > 0)
+	{
+		free(array[index]);
+		index--;
+	}
+	free(array[0]);
+	free(array);
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**a;
 	char	**d;
 	char	*p;
-	size_t	i;
-	size_t	j;
+	size_t	i[2];
 
-	i = 0;
-	j = 0;
+	i[0] = 0;
+	i[1] = -1;
 	a = (char **) malloc(sizeof(p) * (ft_chrcnt(s, c) + 2));
 	d = ft_adrr(s, c);
-	while (*d[j] != '\0' && d[j])
+	while (d[++i[1]])
 	{
-		if (d[j + 1] - d[j] != 1)
+		if (d[i[1] + 1] - d[i[1]] != 1 && *d[i[1]] != '\0')
 		{
-			if (d[j] == s && *s != c)
-				p = ft_substr(d[j], 0, d[j + 1] - d[j]);
+			if (d[i[1]] == s && *s != c)
+				p = ft_substr(d[i[1]], 0, d[i[1] + 1] - d[i[1]]);
 			else
-				p = ft_substr(d[j], 1, d[j + 1] - d[j] - 1);
-			a[i++] = p;
+				p = ft_substr(d[i[1]], 1, d[i[1] + 1] - d[i[1]] - 1);
+			if (!p)
+				return (ft_freeall(a, i[0]));
+			a[i[0]++] = p;
 		}
-		j++;
 	}
-	a[i] = 0;
+	a[i[0]] = 0;
 	free(d);
 	return (a);
 }
