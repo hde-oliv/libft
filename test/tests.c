@@ -1735,14 +1735,15 @@ int main(void)
 	/* ft_putendl_fd */
 	/* end ft_putendl_fd */
 	/* ft_putnbr_fd */
-	char **a;
-	a = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
-	for (size_t i = 0; a[i]; i++)
-	{
-		printf("%s\n", a[i]);
-	}
+	/* char **a; */
+	/* a = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '); */
+	/* for (size_t i = 0; a[i]; i++) */
+	/* { */
+	/* 	printf("%s\n", a[i]); */
+	/* } */
 	/* end ft_putnbr_fd */
 	/* end additional */
+	ft_putnbr_fd(-2147483648, 1);
 
 	/* bonus */
 	/* end bonus */
