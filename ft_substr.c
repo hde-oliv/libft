@@ -16,12 +16,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
 
-	p = (char *) malloc(sizeof(char) * len + 1);
-	if (p == NULL)
-		return (NULL);
 	if (start < ft_strlen(s))
+	{
+		p = (char *) malloc(sizeof(char) * len + 1);
+		if (p == NULL)
+			return (NULL);
 		ft_strlcpy(p, &s[start], len + 1);
+	}
 	else
-		ft_strlcpy(p, "\0", len + 1);
+	{
+		p = (char *) malloc(sizeof(char) * 1);
+		if (p == NULL)
+			return (NULL);
+		ft_strlcpy(p, "", 1);
+	}
 	return (p);
 }

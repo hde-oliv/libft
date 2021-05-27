@@ -41,7 +41,7 @@ CC		=	gcc
 
 LIB		=	ar rcs
 
-CFLAGS	=	-Wall -Wextra -Werror -I. -g
+CFLAGS	=	-Wall -Wextra -Werror -I. -g -fsanitize=address
 
 RM		=	rm -f
 
@@ -67,6 +67,6 @@ so:
 			gcc -shared -o libft.so $(OBJS)
 
 test:		all
-			$(CC) $(CFLAGS) -lbsd -g test/tests.c -L. -lft -o tests
+			$(CC) $(CFLAGS) -lbsd -g -fsanitize=address test/tests.c -L. -lft -o tests
 
 .PHONY: 	all clean fclean re
