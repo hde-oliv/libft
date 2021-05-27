@@ -15,10 +15,15 @@
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*p;
+	size_t	i;
 
-	if (start < ft_strlen(s))
+	i = ft_strlen(s);
+	if (start < i)
 	{
-		p = (char *) malloc(sizeof(char) * len + 1);
+		if (i > len)
+			p = (char *) malloc(sizeof(char) * len + 1);
+		else
+			p = (char *) malloc(sizeof(char) * i + 1);
 		if (p == NULL)
 			return (NULL);
 		ft_strlcpy(p, &s[start], len + 1);
