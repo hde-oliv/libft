@@ -1,5 +1,6 @@
 #include <ctype.h>
 #include <string.h>
+#include <bsd/string.h>
 #include <stdio.h>
 #include "../libft.h"
 
@@ -39,11 +40,6 @@ int main(void)
 		printf("Test 01 - OK!\n");
 	else
 		printf("Test 01 - KO!\n");
-
-	if (v == w)
-		printf("Test 02 - OK!\n");
-	else
-		printf("Test 02 - KO!\n");
 
 	strcpy(str, "The lazy dog jumped over something!");
 	strcpy(str_2, "The lazy dog jumped over something!");
@@ -1525,7 +1521,7 @@ int main(void)
 
 	strcpy(str, "Watermelon isn't that bad, ok!");
 	p = ft_substr(str, 0, 0);
-	if (p == NULL)
+	if (!strcmp(p, ""))
 		printf("Test 02 - OK!\n");
 	else
 		printf("Test 02 - KO!\n");
@@ -1533,7 +1529,7 @@ int main(void)
 
 	strcpy(str, "Watermelon isn't that bad, ok!");
 	p = ft_substr(str, 80, 90);
-	if (p == NULL)
+	if (!strcmp(p, ""))
 		printf("Test 03 - OK!\n");
 	else
 		printf("Test 03 - KO!\n");
@@ -1541,7 +1537,7 @@ int main(void)
 
 	strcpy(str, "ABC");
 	p = ft_substr(str, 0, 4);
-	if (p == NULL)
+	if (!strcmp(p, ""))
 		printf("Test 04 - OK!\n");
 	else
 		printf("Test 04 - KO!\n");
@@ -1573,7 +1569,7 @@ int main(void)
 
 	strcpy(str, "ABC");
 	p = ft_substr(str, 202435, 2);
-	if (!strcmp(p, "C"))
+	if (!strcmp(p, ""))
 		printf("Test 08 - OK!\n");
 	else
 		printf("Test 08 - KO!\n");
@@ -1581,7 +1577,7 @@ int main(void)
 
 	strcpy(str, "ABC");
 	p = ft_substr(str, 0, 25134);
-	if (!strcmp(p, "C"))
+	if (!strcmp(p, ""))
 		printf("Test 09 - OK!\n");
 	else
 		printf("Test 09 - KO!\n");
@@ -1612,7 +1608,7 @@ int main(void)
 	strcpy(str, "");
 	strcpy(str_2, "");
 	p = ft_strjoin(str, str_2);
-	if (p == NULL)
+	if (!strcmp(p, ""))
 		printf("Test 03 - OK!\n");
 	else
 		printf("Test 03 - KO!\n");
@@ -1758,7 +1754,7 @@ int main(void)
 	strcpy(str, "Hello");
 	test = &ft_testmapi;
 	p = ft_strmapi(str, test);
-	if (!strcmp(str, "Hoooo"))
+	if (!strcmp(p, "Hoooo"))
 		printf("Test 1 - OK!\n");
 	else
 		printf("Test 2 - KO!\n");
