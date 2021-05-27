@@ -1735,12 +1735,12 @@ int main(void)
 	/* ft_putendl_fd */
 	/* end ft_putendl_fd */
 	/* ft_putnbr_fd */
-	/* char **a; */
-	/* a = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' '); */
-	/* for (size_t i = 0; a[i]; i++) */
-	/* { */
-	/* 	printf("%s\n", a[i]); */
-	/* } */
+	char **a;
+	a = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ');
+	for (size_t i = 0; a[i]; i++)
+	{
+		printf("%s\n", a[i]);
+	}
 	/* end ft_putnbr_fd */
 	/* end additional */
 	/* char *s; */
@@ -1826,12 +1826,12 @@ int main(void)
 	/* ft_putstr_fd(NULL, 1); */
 	/* ft_putendl_fd(NULL, 1); */
 
-	int a;
-	char *b;
+	/* int a; */
+	/* char *b; */
 
-	b = NULL;
-	a = strlen(b);
-	printf("%d", a);
+	/* b = NULL; */
+	/* a = strlen(b); */
+	/* printf("%d", a); */
 
 
 	return (0);
