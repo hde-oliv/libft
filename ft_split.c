@@ -84,7 +84,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	a = (char **) malloc(sizeof(char *) * ft_wrdcnt(s, c) + 1);
+	a = (char **) malloc(sizeof(char *) * (ft_wrdcnt(s, c) + 1));
 	if (a == NULL)
 		return (NULL);
 	start = ft_snxtwrd(s, c);
@@ -93,13 +93,13 @@ char	**ft_split(char const *s, char c)
 	{
 		j = 0;
 		next = ft_nxtwrd(start, c);
-		while (start[j] != c)
+		while (start[j] != c && start[j])
 			j++;
 		a[i++] = ft_substr(start, 0, j);
 		if (a[i - 1] == NULL)
 			return (ft_freeall(a, i - 1));
 		start = next;
 	}
-	a[i] = 0;
+	a[i] = NULL;
 	return (a);
 }
