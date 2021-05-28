@@ -56,7 +56,7 @@ static char	*ft_nxtwrd(char const *s, char c)
 	}
 }
 
-static char	*ft_snxtwrd(char const *s, char c)
+static char	*snxtwrd(char const *s, char c)
 {
 	if (*s == c)
 		return (ft_nxtwrd(s, c));
@@ -64,7 +64,7 @@ static char	*ft_snxtwrd(char const *s, char c)
 		return ((char *) s);
 }
 
-static char	**ft_freeall(char **a, size_t i)
+static char	**freeall(char **a, size_t i)
 {
 	while (i > 0)
 	{
@@ -87,7 +87,7 @@ char	**ft_split(char const *s, char c)
 	a = (char **) malloc(sizeof(char *) * (ft_wrdcnt(s, c) + 1));
 	if (a == NULL)
 		return (NULL);
-	start = ft_snxtwrd(s, c);
+	start = snxtwrd(s, c);
 	i = 0;
 	while (start && *start != '\0')
 	{
@@ -97,7 +97,7 @@ char	**ft_split(char const *s, char c)
 			j++;
 		a[i++] = ft_substr(start, 0, j);
 		if (a[i - 1] == NULL)
-			return (ft_freeall(a, i - 1));
+			return (freeall(a, i - 1));
 		start = next;
 	}
 	a[i] = NULL;
