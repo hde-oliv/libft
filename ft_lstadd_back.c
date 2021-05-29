@@ -2,6 +2,8 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*last;
+
 	if (lst == NULL)
 		return ;
 	if (*lst == NULL)
@@ -9,7 +11,6 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		*lst = new;
 		return  ;
 	}
-	while ((*lst)->next != NULL)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	last = ft_lstlast((*lst));
+	last->next = new;
 }
