@@ -81,8 +81,7 @@ char	**ft_split(char const *s, char c)
 	char	**a;
 	char	*start;
 	char	*next;
-	size_t	i;
-	size_t	j;
+	size_t	i[2];
 
 	if (!s)
 		return (NULL);
@@ -90,18 +89,18 @@ char	**ft_split(char const *s, char c)
 	if (a == NULL)
 		return (NULL);
 	start = snxtwrd(s, c);
-	i = 0;
+	i[0] = 0;
 	while (start && *start != '\0')
 	{
-		j = 0;
+		i[1] = 0;
 		next = ft_nxtwrd(start, c);
-		while (start[j] != c && start[j])
-			j++;
-		a[i++] = ft_substr(start, 0, j);
-		if (a[i - 1] == NULL)
-			return (freeall(a, i - 1));
+		while (start[i[1]] != c && start[i[1]])
+			i[0]++;
+		a[i[0]++] = ft_substr(start, 0, i[1]);
+		if (a[i[0] - 1] == NULL)
+			return (freeall(a, i[0] - 1));
 		start = next;
 	}
-	a[i] = NULL;
+	a[i[0]] = NULL;
 	return (a);
 }
