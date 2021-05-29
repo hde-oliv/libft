@@ -19,14 +19,11 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	org_size;
 
 	i = 0;
-	j = 0:
-	while (*dst)
-	{
-		if (i >= dstsize)
-			return (ft_strlen(src) + i);
-		i++;
-	}
-	org_size = i;
+	j = 0;
+	org_size = ft_strlen(dst);
+	if (org_size >= dstsize)
+		return (ft_strlen(src) + dstsize);
+	i = org_size;
 	while (i < (dstsize - 1) && src[j])
 	{
 		dst[i] = src[j];
