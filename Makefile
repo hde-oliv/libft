@@ -77,4 +77,4 @@ re: 		fclean all
 bonus:		$(OBJS) $(BOBJS)
 			$(LIB) $(NAME) $(OBJS) $(BOBJS)
 
-.PHONY: 	all clean fclean re bonus $(NAME)
+.PHONY: 	all clean fclean re bonus
