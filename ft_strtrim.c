@@ -49,6 +49,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char		*p;
 	size_t		i;
 
+	if (!s1)
+		return (NULL);
 	i = ft_strlen(s1);
 	if (!i)
 		return (ft_strdup(s1));

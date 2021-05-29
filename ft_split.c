@@ -84,6 +84,8 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
+	if (!s)
+		return (NULL);
 	a = (char **) malloc(sizeof(char *) * (ft_wrdcnt(s, c) + 1));
 	if (a == NULL)
 		return (NULL);
