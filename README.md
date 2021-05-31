@@ -231,7 +231,7 @@ The &ldquo;ft&rdquo; means forty-two.
 </tbody>
 </table>
 
-OBS: I know that isspace is a Libc function, but it wasn&rsquo;t part of the Libft project
+OBS: I know that isspace is a Libc function, but it wasn&rsquo;t part of the Libft project.
 
 
 <a id="org44c4196"></a>
@@ -246,7 +246,7 @@ Just clone the repository and run:
 
     make
 
-The library will be generated in .a.
+The library will be generated in libft.a.
 
 
 <a id="org2bfb47d"></a>
