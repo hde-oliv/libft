@@ -37,7 +37,6 @@ static char	*nxtwrd(char const *s, char c)
 	}
 }
 
-
 static size_t	wrdcnt(const char *s, char c)
 {
 	size_t	i;
@@ -56,6 +55,7 @@ static size_t	wrdcnt(const char *s, char c)
 	}
 	return (i);
 }
+
 static char	*snxtwrd(char const *s, char c)
 {
 	if (*s == c)
