@@ -1,4 +1,4 @@
-SRCS	=	ft_memset.c \
+SRC		:=	ft_memset.c \
 			ft_bzero.c \
 			ft_memcpy.c \
 			ft_memccpy.c \
@@ -32,10 +32,7 @@ SRCS	=	ft_memset.c \
 			ft_putstr_fd.c \
 			ft_putendl_fd.c \
 			ft_putnbr_fd.c \
-
-OBJS	=	$(SRCS:.c=.o)
-
-BSRCS	=	ft_lstnew.c \
+			ft_lstnew.c \
 			ft_lstadd_front.c \
 			ft_lstsize.c \
 			ft_lstlast.c \
@@ -45,36 +42,53 @@ BSRCS	=	ft_lstnew.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
 
-BOBJS	=	$(BSRCS:.c=.o)
+INC_DIR :=	includes
+SRC_DIR :=	srcs
+OBJ_DIR :=	objs
 
-NAME	=	libft.a
+INCLS   :=	$(INC_DIR)
+SRCS	:=	$(addprefix $(SRC_DIR)/,$(SRC))
+OBJS    :=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CC		=	gcc
+NAME	:=	libft.a
 
-LIB		=	ar rcs
+RLIB    :=	ranlib
 
-CFLAGS	=	-Wall -Wextra -Werror -I.
+CC		:=	gcc
 
-RM		=	rm -f
+LIB		:=	ar rcs
 
-.c.o:
-			$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+CFLAGS	+=	-Wall -Wextra -Werror
 
+LFLAGS  += -I.
+
+RM		:=	rm -rf
+
+
+
+all:		obj $(NAME)
+
+
+$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
+			$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
 
 $(NAME):	$(OBJS)
-			$(LIB) $(NAME) $(OBJS)
+			@echo "Compiling..."
+			@$(LIB) $(NAME) $(OBJS)
+			@$(RLIB) $(NAME)
+			@echo "Success!"
 
-all:		$(NAME)
+
+obj:
+			@mkdir -p $(OBJ_DIR)
 
 clean:
-			$(RM) $(OBJS) $(BOBJS)
+			@$(RM) $(OBJS) $(OBJ_DIR)
+			@echo "Cleaned!"
 
 fclean: 	clean
-			$(RM) $(NAME)
+			@$(RM) $(NAME)
 
 re: 		fclean all
 
-bonus:		$(OBJS) $(BOBJS)
-			$(LIB) $(NAME) $(OBJS) $(BOBJS)
-
-.PHONY: 	all clean fclean re bonus
+.PHONY: 	all clean fclean re obj

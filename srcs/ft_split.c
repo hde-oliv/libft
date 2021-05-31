@@ -12,26 +12,7 @@
 
 #include "libft.h"
 
-static size_t	ft_wrdcnt(const char *s, char c)
-{
-	size_t	i;
-
-	i = 0;
-	while (*s)
-	{
-		if (*s == c)
-			s++;
-		else
-		{
-			while (*s != c && *s)
-				s++;
-			i++;
-		}
-	}
-	return (i);
-}
-
-static char	*ft_nxtwrd(char const *s, char c)
+static char	*nxtwrd(char const *s, char c)
 {
 	size_t	i;
 
@@ -56,23 +37,36 @@ static char	*ft_nxtwrd(char const *s, char c)
 	}
 }
 
+
+static size_t	wrdcnt(const char *s, char c)
+{
+	size_t	i;
+
+	i = 0;
+	while (*s)
+	{
+		if (*s == c)
+			s++;
+		else
+		{
+			while (*s != c && *s)
+				s++;
+			i++;
+		}
+	}
+	return (i);
+}
 static char	*snxtwrd(char const *s, char c)
 {
 	if (*s == c)
-		return (ft_nxtwrd(s, c));
+		return (nxtwrd(s, c));
 	else
 		return ((char *) s);
 }
 
 static char	**freeall(char **a, size_t i)
 {
-	while (i > 0)
-	{
-		free(a[i]);
-		i--;
-	}
-	free(a[0]);
-	free(a);
+	ft_dfree(a, i);
 	return (NULL);
 }
 
@@ -84,7 +78,7 @@ char	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-	a = (char **) malloc(sizeof(char *) * (ft_wrdcnt(s, c) + 1));
+	a = (char **) malloc(sizeof(char *) * (wrdcnt(s, c) + 1));
 	if (a == NULL)
 		return (NULL);
 	start = snxtwrd(s, c);
@@ -92,7 +86,7 @@ char	**ft_split(char const *s, char c)
 	while (start && *start != '\0')
 	{
 		j = 0;
-		next = ft_nxtwrd(start, c);
+		next = nxtwrd(start, c);
 		while (start[j] != c && start[j])
 			j++;
 		a[i++] = ft_substr(start, 0, j);
