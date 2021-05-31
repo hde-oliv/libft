@@ -1,5 +1,8 @@
 
-# Table of Contents
+# Libft
+
+
+## Table of Contents
 
 1.  [Libft](#org7a9c75a)
     1.  [What it is](#orge444dbf)
@@ -12,7 +15,6 @@
 
 <a id="org7a9c75a"></a>
 
-# Libft
 
 
 <a id="orge444dbf"></a>
