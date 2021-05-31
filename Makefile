@@ -41,6 +41,9 @@ SRC		:=	ft_memset.c \
 			ft_lstclear.c \
 			ft_lstiter.c \
 			ft_lstmap.c \
+			ft_dfree.c \
+			ft_isspace.c \
+			ft_intlen.c \
 
 INC_DIR :=	includes
 SRC_DIR :=	srcs
@@ -54,7 +57,7 @@ NAME	:=	libft.a
 
 RLIB    :=	ranlib
 
-CC		:=	gcc
+CC		:=	clang
 
 LIB		:=	ar rcs
 
