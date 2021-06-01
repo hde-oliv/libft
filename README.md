@@ -231,7 +231,7 @@ The &ldquo;ft&rdquo; means forty-two.
 </tbody>
 </table>
 
-OBS: I know that isspace is a Libc function, but it wasn&rsquo;t part of the Libft project.
+OBS: I know that isspace is a Libc function, but it wasn&rsquo;t part of the project.
 
 
 <a id="org44c4196"></a>
@@ -253,7 +253,7 @@ The library will be generated in libft.a.
 
 ## Found any bug?
 
-Feel free to send a pull request!
+Feel free to send a pull request or create an issue!
 
 ######  Licensed under GPLv3
 
