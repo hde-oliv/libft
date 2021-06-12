@@ -70,7 +70,7 @@ Succeeded with 115%
 | ft_intlen  | Returns how much decimal cases an integer has. |
 | ft_isspace | Returns true if the character is a space       |
 
-(*) Allocates memory
+(\*) Allocates memory
 (**) Allocates an array of allocated pointers
 
 * How to use it
@@ -89,4 +89,4 @@ The library is generated on the file libft.a.
 * Found any bug?
 Feel free to contact me or create an issue!
 
-Licensed under GPLv3
+- Licensed under GPLv3
