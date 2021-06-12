@@ -1,9 +1,8 @@
 #+TITLE: Libft
 
 ** What it is
-Libft is the first project at École 42 consisting on re-coding basic Libc functions
-and some additional ones. This library is an important part of the whole cursus, as
-it will be used in subsequent projects.
+Libft is the first project at École 42 consisting on re-coding basic Libc functions and some additional ones. \\
+This library is an important part of the whole cursus, as it will be used in subsequent projects. \\
 The “ft” means forty-two.
 
 ** Skills
@@ -70,8 +69,8 @@ Succeeded with 115%
 | ft_intlen  | Returns how much decimal cases an integer has. |
 | ft_isspace | Returns true if the character is a space       |
 
-- ( * ) Allocates memory
-- ( ** ) Allocates an array of allocated pointers
+  ( * ) Allocates memory \\
+  ( ** ) Allocates an array of allocated pointers \\
 
 ** How to use it
 Requisites:
