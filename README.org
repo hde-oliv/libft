@@ -1,22 +1,22 @@
 #+TITLE: Libft
 
-* What it is
+** What it is
 Libft is the first project at École 42 consisting on re-coding basic Libc functions
 and some additional ones. This library is an important part of the whole cursus, as
 it will be used in subsequent projects.
 The “ft” means forty-two.
 
-* Skills
+** Skills
 - Algorithms & AI
 - Imperative programming
 - Rigor
 - Unix logic
 
-* My grade
+** My grade
 Succeeded with 115%
 
-* Functions
-** Mandatory
+** Functions
+*** Mandatory
 | ft_atoi    | Convert a string to an integer.                                         |
 | ft_bzero   | Set the memory area to zero.                                            |
 | ft_calloc  | Allocates memory and sets it to zero. (*)                               |
@@ -42,7 +42,7 @@ Succeeded with 115%
 | ft_tolower | Takes a character and returns it lowercase.                             |
 | ft_toupper | Takes a character and returns it uppercase.                             |
 
-** Additional
+*** Additional
 | ft_itoa       | Converts an integer to a string. (*)                                              |
 | ft_putchar_fd | Write a character on a file descriptor.                                           |
 | ft_putendl_fd | Write a string and a line break on a file descriptor.                             |
@@ -54,7 +54,7 @@ Succeeded with 115%
 | ft_substr     | Returns a substring of the string passed. (*)                                     |
 | ft_strtrim    | Trims the string. (*)                                                             |
 
-** Bonus
+*** Bonus
 | ft_lstadd_back  | Adds an element to the end of a linked list. (*)                                         |
 | ft_lstadd_front | Adds an element to the front of a linked list. (*)                                       |
 | ft_lstclear     | Deletes an entire linked list.                                                           |
@@ -65,15 +65,15 @@ Succeeded with 115%
 | ft_lstnew       | Creates a new element. (*)                                                               |
 | ft_lstsize      | Returns a size of a linked list.                                                         |
 
-** Personal
+*** Personal
 | ft_dfree   | Frees an array of allocated pointers           |
 | ft_intlen  | Returns how much decimal cases an integer has. |
 | ft_isspace | Returns true if the character is a space       |
 
-(\*) Allocates memory
-(**) Allocates an array of allocated pointers
+- ( * ) Allocates memory
+- ( ** ) Allocates an array of allocated pointers
 
-* How to use it
+** How to use it
 Requisites:
 #+BEGIN_SRC
 clang
@@ -86,7 +86,7 @@ make
 
 The library is generated on the file libft.a.
 
-* Found any bug?
+** Found any bug?
 Feel free to contact me or create an issue!
 
 - Licensed under GPLv3
