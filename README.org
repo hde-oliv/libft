@@ -79,7 +79,7 @@ Requisites:
 clang
 #+END_SRC
 
-Then, clone the repository and run:
+Clone the repository and run:
 #+BEGIN_SRC
 make
 #+END_SRC
