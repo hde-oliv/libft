@@ -4,7 +4,23 @@ static void print_result(int bool, int reset);
 
 int	main(void)
 {
-	printf("\nft_range: ");
+	printf("\nLibc:");
+	printf("\n  ft_memset: ");
+
+	print_result(ft_memset_with_13_bytes_to_set(), 1);
+	print_result(ft_memset_with_1_bytes_to_set(), 0);
+	print_result(ft_memset_with_50_bytes_to_set(), 0);
+	print_result(ft_memset_check_the_pointer_return(), 0);
+	printf("\n");
+/*****************************************************************************/
+	printf("\nAdditional:");
+/*****************************************************************************/
+	printf("\nBonus:");
+/*****************************************************************************/
+	printf("\nTree:");
+/*****************************************************************************/
+	printf("\nPersonal:");
+	printf("\n  ft_range: ");
 	print_result(ft_range_with_zero_and_zero(), 1);
 	print_result(ft_range_with_zero_and_negative(), 0);
 	print_result(ft_range_with_negative_and_zero(), 0);
@@ -14,11 +30,11 @@ int	main(void)
 	print_result(ft_range_with_zero_and_positive(), 0);
 	print_result(ft_range_with_positive_and_positive(), 0);
 
-	printf("\nft_abs: ");
+	printf("\n  ft_abs: ");
 	print_result(ft_abs_with_minus_six(), 1);
 	print_result(ft_abs_with_zero(), 0);
 
-	printf("\nft_atoll: ");
+	printf("\n  ft_atoll: ");
 	print_result(ft_atoll_with_zero(), 1);
 	print_result(ft_atoll_with_minus_one(), 0);
 	print_result(ft_atoll_with_one(), 0);
@@ -33,7 +49,8 @@ int	main(void)
 	print_result(ft_atoll_with_gibberish3(), 0);
 	print_result(ft_atoll_with_gibberish4(), 0);
 	print_result(ft_atoll_with_gibberish5(), 0);
-
+/*****************************************************************************/
+	printf("\n\n");
 	return (0);
 }
 

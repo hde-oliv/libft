@@ -4,6 +4,14 @@
 # include <string.h>
 # include <strings.h>
 
+/* Libc */
+
+int ft_memset_with_13_bytes_to_set(void);
+int ft_memset_with_1_bytes_to_set(void);
+int ft_memset_with_50_bytes_to_set(void);
+int ft_memset_check_the_pointer_return(void);
+
+/* Personal*/
 int	ft_range_with_zero_and_zero(void);
 int	ft_range_with_zero_and_negative(void);
 int	ft_range_with_negative_and_zero(void);
