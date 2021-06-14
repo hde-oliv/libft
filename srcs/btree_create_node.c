@@ -1,6 +1,6 @@
 #include "libft.h"
 
-t_btree	*ft_btcreate_node(void *item)
+t_btree	*btree_create_node(void *item)
 {
 	t_btree	*node;
 

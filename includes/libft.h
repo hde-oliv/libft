@@ -87,16 +87,16 @@ int			ft_abs(int n);
 long long	ft_atoll(const char *str);
 
 /* btree functions */
-t_btree		*ft_btcreate_node(void *item);
-void		ft_btapply_prefix(t_btree *root, void (*applyf)(void *));
-void		ft_btapply_infix(t_btree *root, void (*applyf)(void *));
-void		ft_btapply_suffix(t_btree *root, void (*applyf)(void *));
-void		ft_btinsert_data(t_btree **root, void *item, \
+t_btree		*btree_create_node(void *item);
+void		btree_apply_prefix(t_btree *root, void (*applyf)(void *));
+void		btree_apply_infix(t_btree *root, void (*applyf)(void *));
+void		btree_apply_suffix(t_btree *root, void (*applyf)(void *));
+void		btree_insert_data(t_btree **root, void *item, \
 int (*cmpf)(void *, void *));
-void		*ft_btsearch_item(t_btree *root, void *data_ref, \
+void		*btree_search_item(t_btree *root, void *data_ref, \
 int *(*cmpf)(void *, void *));
-int			ft_btlevel_count(t_btree *root);
-void		ft_btapply_by_level(t_btree *root, \
+int			btree_level_count(t_btree *root);
+void		btree_apply_by_level(t_btree *root, \
 void (*applyf)(void *item, int current_level, int is_first_elem));
 
 #endif
