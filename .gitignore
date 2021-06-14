@@ -1,0 +1,8 @@
+*.gch
+srcs/libft.h
+*.a
+*.o
+tests/libft.h
+tests/tests.h
+.idea
+.gitignore

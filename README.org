@@ -66,9 +66,12 @@ Succeeded with 115%
 | ft_lstsize      | Returns a size of a linked list.                                                         |
 
 *** Personal
-| ft_dfree   | Frees an array of allocated pointers           |
-| ft_intlen  | Returns how much decimal cases an integer has. |
-| ft_isspace | Returns true if the character is a space       |
+| ft_dfree   | Frees an array of allocated pointers                     |
+| ft_intlen  | Returns how much decimal cases an integer has.           |
+| ft_isspace | Returns true if the character is a space.                |
+| ft_range   | Returns an array of integers delimited by 2 numbers. (*) |
+| ft_abs     | Returns the absolute value of an integer.                |
+| ft_atoll   | Converts a string to a long long integer.                |
 
 ( * ) Allocates memory \\
 ( ** ) Allocates an array of allocated pointers
@@ -85,6 +88,12 @@ make
 #+END_SRC
 
 The library is generated on the file libft.a.
+
+To run the tests:
+#+BEGIN_SRC
+make tests
+#+END_SRC
+The results will be outputted on console.
 
 ** Found any bug?
 Feel free to contact me or create an issue!
