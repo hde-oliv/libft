@@ -1,10 +1,18 @@
 #+TITLE: Libft
+#+AUTHOR: Henrique Rocha
+#+DESCRIPTION: A personal library of C functions, partially a re-implementation of libc (BSD version).
 
 ** What it is
 Libft is the first project at École 42 consisting on re-coding basic Libc functions and some additional ones. \\
 This library is an important part of the whole cursus, as it will be used in subsequent projects.
 
 The “ft” means forty-two.
+
+** Badge
+#+BEGIN_CENTER
+[[https://game.42sp.org.br/static/assets/achievements/libftm.png]]
+#+END_CENTER
+
 
 ** Skills
 - Algorithms & AI
