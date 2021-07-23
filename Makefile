@@ -36,10 +36,8 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
 
 $(NAME):	$(OBJS)
-			@echo "Compiling..."
 			@$(LIB) $(NAME) $(OBJS)
 			@$(RLIB) $(NAME)
-			@sleep 5
 			@echo "Success!"
 
 obj:
@@ -57,7 +55,6 @@ re: 		fclean all
 tests:		all
 			@$(CC) $(CFLAGS) $(TFLAGS) $(LFLAGS)/$(INCLS) tests/*.c $(NAME) -o tests.out
 			@echo "Beginning tests..."
-			@sleep 5
 			@./tests.out
 			@rm -rf tests.out
 
