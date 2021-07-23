@@ -97,7 +97,7 @@ make
 
 The library is generated on the file libft.a.
 
-To run the tests:
+To run the tests (in construction):
 #+BEGIN_SRC
 make tests
 #+END_SRC
