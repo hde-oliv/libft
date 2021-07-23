@@ -86,7 +86,7 @@ int			*ft_range(int min, int max);
 int			ft_abs(int n);
 long long	ft_atoll(const char *str);
 
-/* btree functions */
+/* btree functions TODO */
 t_btree		*btree_create_node(void *item);
 void		btree_apply_prefix(t_btree *root, void (*applyf)(void *));
 void		btree_apply_infix(t_btree *root, void (*applyf)(void *));
