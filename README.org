@@ -13,7 +13,6 @@ The “ft” means forty-two.
 [[https://game.42sp.org.br/static/assets/achievements/libftm.png]]
 #+END_CENTER
 
-
 ** Skills
 - Algorithms & AI
 - Imperative programming
@@ -25,30 +24,30 @@ Succeeded with 115%
 
 ** Functions
 *** Mandatory
-| ft_atoi    | Convert a string to an integer.                                         |
-| ft_bzero   | Set the memory area to zero.                                            |
-| ft_calloc  | Allocates memory and sets it to zero. (*)                               |
-| ft_isalnum | Returns true if the character is alphanumeric.                          |
-| ft_isalpha | Returns true if the character is alphabetic.                            |
-| ft_isascii | Returns true if the character is on the ASCII table.                    |
-| ft_isdigit | Returns true if the character is numeric.                               |
-| ft_isprint | Returns true if the character is printable.                             |
-| ft_memccpy | Copies an area of memory to another but stops as it founds a character. |
-| ft_memchr  | Searches for a character in an area of memory and returns its location. |
-| ft_memcmp  | Compare two areas of memory.                                            |
-| ft_memcpy  | Copies an area of memory to another.                                    |
-| ft_memmove | Copies an area of memory to another. (Handles overlap)                  |
-| ft_memset  | Set the memory area to the passed character.                            |
-| ft_strchr  | Searches for a character in a string and returns its location.          |
-| ft_strdup  | Allocates a copy of a string. (*)                                       |
-| ft_strlcat | Concatenates a string to a destiny just size - 1 bytes.                 |
-| ft_strlcpy | Copies a string to a destiny just size - 1 bytes.                       |
-| ft_strlen  | Returns the length of a string.                                         |
-| ft_strncmp | Compares n bytes of two strings.                                        |
-| ft_strnstr | Returns the position of a substring, but just searches n bytes          |
-| ft_strrchr | Returns the last incidence of a character in a string.                  |
-| ft_tolower | Takes a character and returns it lowercase.                             |
-| ft_toupper | Takes a character and returns it uppercase.                             |
+| ft_atoi    | Convert a string to an integer.                                          |
+| ft_bzero   | Set the memory area to zero.                                             |
+| ft_calloc  | Allocates memory and sets it to zero. (*)                                |
+| ft_isalnum | Returns true if the character is alphanumeric.                           |
+| ft_isalpha | Returns true if the character is alphabetic.                             |
+| ft_isascii | Returns true if the character is on the ASCII table.                     |
+| ft_isdigit | Returns true if the character is numeric.                                |
+| ft_isprint | Returns true if the character is printable.                              |
+| ft_memccpy | Copies an area of memory to another, but stops as it founds a character. |
+| ft_memchr  | Searches for a character in an area of memory and returns its location.  |
+| ft_memcmp  | Compare two areas of memory.                                             |
+| ft_memcpy  | Copies an area of memory to another.                                     |
+| ft_memmove | Copies an area of memory to another. (Handles overlap)                   |
+| ft_memset  | Set the memory area to the past character.                               |
+| ft_strchr  | Searches for a character in a string and returns its location.           |
+| ft_strdup  | Allocates a copy of a string. (*)                                        |
+| ft_strlcat | Concatenates a string to a destiny just size - 1 bytes.                  |
+| ft_strlcpy | Copies a string to a destiny just size - 1 bytes.                        |
+| ft_strlen  | Returns the length of a string.                                          |
+| ft_strncmp | Compares n bytes of two strings.                                         |
+| ft_strnstr | Returns the position of a substring, but just searches n bytes           |
+| ft_strrchr | Returns the last incidence of a character in a string.                   |
+| ft_tolower | Takes a character and returns it lowercase.                              |
+| ft_toupper | Takes a character and returns it uppercase.                              |
 
 *** Additional
 | ft_itoa       | Converts an integer to a string. (*)                                              |
@@ -69,7 +68,7 @@ Succeeded with 115%
 | ft_lstdelone    | Deletes just an element.                                                                 |
 | ft_lstiter      | Iterates the entire linked list and applies the function to the content of its elements. |
 | ft_lstlast      | Returns the pointer to the last element.                                                 |
-| ft_lstmap       | Creates a new linked list applying a function to the content of all elements. (*)        |
+| ft_lstmap       | Creates a new linked list, applying a function to the content of all elements. (*)       |
 | ft_lstnew       | Creates a new element. (*)                                                               |
 | ft_lstsize      | Returns a size of a linked list.                                                         |
 
