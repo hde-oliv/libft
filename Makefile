@@ -40,7 +40,7 @@ $(NAME):	$(OBJS)
 			$(RLIB) $(NAME)
 
 obj:
-			mkdir -p $(OBJ_DIR)
+			@mkdir -p $(OBJ_DIR)
 
 clean:
 			$(RM) $(OBJS) $(OBJ_DIR)
