@@ -23,7 +23,7 @@ build:
 
 test:
   script:
-     - make test
+     - make tests
 
 norme:
   script:
