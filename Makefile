@@ -36,26 +36,22 @@ $(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
 			$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
 
 $(NAME):	$(OBJS)
-			@$(LIB) $(NAME) $(OBJS)
-			@$(RLIB) $(NAME)
-			@echo "Success!"
+			$(LIB) $(NAME) $(OBJS)
+			$(RLIB) $(NAME)
 
 obj:
-			@mkdir -p $(OBJ_DIR)
+			mkdir -p $(OBJ_DIR)
 
 clean:
-			@$(RM) $(OBJS) $(OBJ_DIR)
-			@echo "Cleaned!"
+			$(RM) $(OBJS) $(OBJ_DIR)
 
 fclean: 	clean
-			@$(RM) $(NAME)
+			$(RM) $(NAME)
 
 re: 		fclean all
 
 tests:		all
-			@$(CC) $(CFLAGS) $(TFLAGS) $(LFLAGS)/$(INCLS) tests/*.c $(NAME) -o tests.out
-			@echo "Beginning tests..."
-			@./tests.out
-			@rm -rf tests.out
+			$(CC) $(CFLAGS) $(TFLAGS) $(LFLAGS)/$(INCLS) tests/*.c $(NAME) -o tests.out
+			./tests.out
 
 .PHONY: 	all clean fclean re obj tests
