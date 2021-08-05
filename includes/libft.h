@@ -344,7 +344,7 @@ char		*ft_strtrim(char const *s1, char const *set);
  * Return: An allocated array of allocated substrings.
  *
  * Example:
- *        ft_split("Here comes the sun !", ' '); --> {"Here", "comes", "the", "sun", "!", "\0"}
+ *        ft_split("Here comes!", ' '); --> {"Here", "comes!", "\0"}
  */
 char		**ft_split(char const *s, char c);
 
