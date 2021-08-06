@@ -1,4 +1,4 @@
-name: Norminette
+name: Build
 
 on:
   push:
