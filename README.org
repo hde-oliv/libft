@@ -2,6 +2,8 @@
 #+AUTHOR: Henrique Rocha
 #+DESCRIPTION: A personal library of C functions, partially a re-implementation of libc (BSD version).
 
+[[https://github.com/hde-oliv/libft/actions/workflows/build.yml/badge.svg]] [[https://github.com/hde-oliv/libft/actions/workflows/norminette.yml/badge.svg]] [[https://github.com/hde-oliv/libft/actions/workflows/tests.yml/badge.svg]]
+
 ** What it is
 Libft is the first project at École 42 consisting on re-coding basic Libc functions and some additional ones. \\
 This library is an important part of the whole cursus, as it will be used in subsequent projects.
