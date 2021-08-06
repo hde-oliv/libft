@@ -13,6 +13,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install dependencies
       run: |
-	      sudo apt install clang libbsd-dev
+        sudo apt install clang libbsd-dev
     - name: make tests
       run: make tests
