@@ -7,20 +7,20 @@
   <img src="https://github.com/hde-oliv/libft/actions/workflows/tests.yml/badge.svg"/>
 </div>
 
-# What it is
+## What it is
 Libft is the first project at École 42 consisting on re-coding basic Libc functions and some additional ones.  
 This library is an important part of the whole cursus, as it will be used in subsequent projects.  
 The “ft” means forty-two.
 
 Succeeded with 115%
 
-# Skills
+## Skills
 - Algorithms & AI
 - Imperative programming
 - Rigor
 - Unix logic
 
-# Functions
+## Functions
 ### Mandatory
 | Function   | Description                                                              |
 |------------|--------------------------------------------------------------------------|
@@ -89,7 +89,7 @@ Succeeded with 115%
 ( * ) Allocates memory  
 ( ** ) Allocates an array of allocated pointers
 
-# How to use it
+## How to use it
 Requisites:
 ```shell
 clang
@@ -108,7 +108,7 @@ make tests
 ```
 The results will be outputted on console.
 
-# Found any bug?
+## Found any bug?
 Feel free to contact me or create an issue!
 
 ###### Licensed under GPLv3
