@@ -5,7 +5,9 @@
   <img src="https://github.com/hde-oliv/libft/actions/workflows/build.yml/badge.svg"/>
   <img src="https://github.com/hde-oliv/libft/actions/workflows/norminette.yml/badge.svg"/>
   <img src="https://github.com/hde-oliv/libft/actions/workflows/tests.yml/badge.svg"/>
-  <img src="https://www.codefactor.io/repository/github/hde-oliv/libft/badge" alt="CodeFactor" /></a>
+  <a href="https://www.codacy.com/gh/hde-oliv/ft_printf/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=hde-oliv/ft_printf&amp;utm_campaign=Badge_Grade">
+    <img src="https://app.codacy.com/project/badge/Grade/835dd5b0636c4b669f98549d34f8f50c"/>
+  </a>
 </div>
 
 ## What it is
