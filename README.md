@@ -2,9 +2,10 @@
   <img src="https://i.imgur.com/v91fjxi.png"/>
 </div>
 <div align="center">
-  <img style="display: flex;justify-content: center;" src="https://github.com/hde-oliv/libft/actions/workflows/build.yml/badge.svg"/>
+  <img src="https://github.com/hde-oliv/libft/actions/workflows/build.yml/badge.svg"/>
   <img src="https://github.com/hde-oliv/libft/actions/workflows/norminette.yml/badge.svg"/>
   <img src="https://github.com/hde-oliv/libft/actions/workflows/tests.yml/badge.svg"/>
+  <img src="https://www.codefactor.io/repository/github/hde-oliv/libft/badge" alt="CodeFactor" /></a>
 </div>
 
 ## What it is
