@@ -8,15 +8,10 @@ SRC		:=	ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
 			ft_lstmap.c ft_dfree.c ft_isspace.c ft_intlen.c ft_range.c \
-			ft_abs.c \
+			ft_atoll.c get_next_line.c ft_printf.c ft_char.c ft_hex.c \
+			ft_int.c ft_tag.c 
 
-INC_DIR :=	includes
-SRC_DIR :=	srcs
-OBJ_DIR :=	objs
-
-INCLS   :=	$(INC_DIR)
-SRCS	:=	$(addprefix $(SRC_DIR)/,$(SRC))
-OBJS    :=	$(SRCS:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
+OBJS    :=	$(SRC:.c=.o)
 
 NAME	:=	libft.a
 RLIB    :=	ranlib
@@ -24,34 +19,25 @@ CC		:=	clang
 LIB		:=	ar rcs
 
 CFLAGS	+=	-Wall -Wextra -Werror
-LFLAGS  += -I.
-TFLAGS	+=	-fsanitize=address -g
 RM		:=	rm -rf
 
 
 
-all:		obj $(NAME)
+all:		$(NAME)
 
-$(OBJ_DIR)/%.o:	$(SRC_DIR)/%.c
-			$(CC) $(CFLAGS) -c $< -o $@ $(LFLAGS)/$(INCLS)
+.c.o:
+			$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME):	$(OBJS)
 			$(LIB) $(NAME) $(OBJS)
 			$(RLIB) $(NAME)
 
-obj:
-			@mkdir -p $(OBJ_DIR)
-
 clean:
-			$(RM) $(OBJS) $(OBJ_DIR)
+			$(RM) $(OBJS)
 
 fclean: 	clean
 			$(RM) $(NAME)
 
 re: 		fclean all
 
-tests:		all
-			$(CC) $(CFLAGS) $(TFLAGS) $(LFLAGS)/$(INCLS) tests/*.c $(NAME) -o tests.out
-			./tests.out
-
-.PHONY: 	all clean fclean re obj tests
+.PHONY: 	all clean fclean re
