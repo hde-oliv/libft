@@ -1,11 +1,16 @@
 # Libft
 
-## What it is
-Libft is the first project at École 42 consisting on re-coding basic Libc functions and some additional ones.  
-This library is an important part of the whole cursus, as it will be used in subsequent projects.  
+<div align="center">
+  <img width="300px" src="https://cdn-icons-png.flaticon.com/512/225/225730.png"/>
+</div>  
+
+
+## What is it?
+Libft is the first project at École 42 consisting of re-coding basic Libc functions and some additional ones.  
+This library is an important part of the whole course, as it will be used in subsequent projects.  
 The “ft” means forty-two.
 
-Succeeded with 115%
+**Succeeded with 115%**
 
 ## Skills
 - Algorithms & AI
@@ -33,13 +38,13 @@ Succeeded with 115%
 | ft_memset  | Set the memory area to the past character.                               |
 | ft_strchr  | Searches for a character in a string and returns its location.           |
 | ft_strdup  | Allocates a copy of a string. (*)                                        |
-| ft_strlcat | Concatenates a string to a destiny just size - 1 bytes.                  |
-| ft_strlcpy | Copies a string to a destiny just size - 1 bytes.                        |
+| ft_strlcat | Concatenates a string to a destiny of size - 1 bytes.                  |
+| ft_strlcpy | Copies a string to a destiny of size - 1 bytes.                        |
 | ft_strlen  | Returns the length of a string.                                          |
 | ft_strncmp | Compares n bytes of two strings.                                         |
 | ft_strnstr | Returns the position of a substring, but just searches n bytes           |
 | ft_strrchr | Returns the last incidence of a character in a string.                   |
-| ft_tolower | Takes a character and returns it lowercase.                              |
+| ft_tolower | Takes a character and returns it to lowercase.                              |
 | ft_toupper | Takes a character and returns it uppercase.                              |
 
 ### Additional
@@ -83,9 +88,9 @@ Succeeded with 115%
 ( ** ) Allocates an array of allocated pointers
 
 ## How to use it
-Requisites:
+Requirements:
 ```shell
-clang
+sudo apt install clang
 ```
 
 Clone the repository and run:
@@ -101,7 +106,8 @@ make tests
 ```
 The results will be outputted on console.
 
-## Found any bug?
+## Found any bugs?
 Feel free to contact me or create an issue!
 
-###### Licensed under GPLv3
+## License
+This project is licensed under the GNU General Public License v3.0 - see the [COPYING](https://github.com/hde-oliv/libft/blob/master/COPYING) file for details.
